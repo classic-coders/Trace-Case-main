@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Corona Virus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>Corona Virus Tracker Application</h1>
+    <p>This application lists the current number of cases reported across the globe.</p>
+
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+        <p class="lead">Total cases reported as of today</p>
+        <hr class="my-4">
+        <p class="lead">
+            <span>New cases reported since previous day:</span>
+            <span th:text="${totalNewCases}"></span>
+        </p>
+    </div>
+
+	<table class="table table-striped table-bordered mt-4">
+	    <thead class="table-dark">
+	        <tr>
+	            <th>State/Province</th>
+	            <th>Country/Region</th>
+	            <th>Total Cases Reported</th>
+	            <th>Changes Since Previous Day</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr th:each="locationStat : ${locationStats}">
+	            <td th:text="${locationStat.state}"></td>
+	            <td th:text="${locationStat.country}"></td>
+	            <td th:text="${locationStat.latestTotalCases}"></td>
+	            <td th:text="${locationStat.diffFromPrevDay}"></td>
+	        </tr>
+	    </tbody>
+	</table>
+
+    <!-- Chart area -->
+    <h2 class="mt-5">COVID-19 Cases Chart</h2>
+    <canvas id="casesChart" width="400" height="200"></canvas>
+</div>
+
+<!-- JS variables with Thymeleaf inline -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var countries = /*[[${countries}]]*/ [];
+    var totalCases = /*[[${totalCases}]]*/ [];
+    /*]]>*/
+</script>
+
+<script>
+    const ctx = document.getElementById('casesChart').getContext('2d');
+    const casesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: countries,
+            datasets: [{
+                label: 'Total Reported Cases',
+                data: totalCases,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                title: { display: true, text: 'COVID-19 Cases by Country' }
+            },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+</script>
+</body>
+</html>
