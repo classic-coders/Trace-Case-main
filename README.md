@@ -17,4 +17,6 @@ With the increasing number of coronavirus cases day by day it's becoming hard to
 
 ![alt text](https://github.com/Anushka-shukla/Trace-Case/blob/main/images/img.jpeg)
 
+<img width="1920" height="1080" alt="Tracking report" src="https://github.com/user-attachments/assets/5e845779-2dca-4bb9-93cf-88ab1a9a603f" />
+
 I have written a detailed blog for the same on Medium. [Read Here.](https://medium.com/@shuklaannushka/building-a-coronavirus-case-tracer-with-spring-boot-and-java-c16dd60d371c)
