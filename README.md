@@ -101,4 +101,23 @@ Copy code
 http://localhost:8080
 
 
+🎯 Output
+
+Interactive Bar Chart Graph representing COVID deaths and active case counts country-wise
+
+Responsive Table format listing real-time statistics
+
+Efficient & clean UI for better visualization
+
+👨‍💻 Author
+
+Arun Kumar M
+Java Full Stack Developer
+📌 Dindigul, Tamil Nadu – India
+🔗 LinkedIn: https://linkedin.com/in/arunkumar-m2002
+
+🔗 GitHub: https://github.com/classic-coders
+
+
+
 I have written a detailed blog for the same on Medium. [Read Here.](https://medium.com/@shuklaannushka/building-a-coronavirus-case-tracer-with-spring-boot-and-java-c16dd60d371c)
