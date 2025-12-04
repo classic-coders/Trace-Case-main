@@ -119,5 +119,3 @@ Java Full Stack Developer
 🔗 GitHub: https://github.com/classic-coders
 
 
-
-I have written a detailed blog for the same on Medium. [Read Here.](https://medium.com/@shuklaannushka/building-a-coronavirus-case-tracer-with-spring-boot-and-java-c16dd60d371c)
